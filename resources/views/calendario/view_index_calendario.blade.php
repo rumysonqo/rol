@@ -35,18 +35,24 @@ Mantenimiento de Establecimientos
               </div>
             </div>
 
-            
-
-
-
-
-
-
-
-
             <!-- /.box-body -->
           </div>
           <!-- /. box -->
+
+            <div>
+
+              {{ Form::open(['route'=>'calendario.store', 'method'=>'POST']) }} 
+                <div class="form-group">
+                  {{ Form::submit('Grabar',['class'=>'btn btn-primary btn-lg'])}}
+                <a class="btn btn-danger btn-lg" href="{{url('mantenimiento/establecimiento')}}" >Cancelar
+                </a>
+                </div>
+              {{ Form::close() }}
+
+            </div>
+
+
+
           
         </div>
         <!-- /.col -->
@@ -198,14 +204,15 @@ eventClick: function(event){ $('#calendar').fullCalendar('removeEvents',event._i
               eventos.push(evt);
             });
             var dt=JSON.stringify(eventos);
+            alert(eventos);
+            console.log(dt);
 
             $.ajax
             ({
               headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
               method:'post',
               dataType:'json',
-              //url: "{{ URL::route('grabar_calendario') }}",
-              url: '/',
+              url: "{{ URL::route('calendario.store') }}",
               data : dt,
               success:function(response){console.log('SUCCES:',response);},
               error:function(response){console.log('ERROR:',response);}

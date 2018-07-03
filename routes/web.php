@@ -39,16 +39,16 @@ Route::group(['prefix'=>'mantenimiento'],function(){
 	Route::resource('personal','Ctrl_personal');
 });
 
-Route::get('calendario','Ctrl_calendario@index');
+//Route::get('calendario','Ctrl_calendario@index');
 
-Route::post('grabar_calendario',function(){
+/*Route::post('grabar_calendario',function(){
 	return 'hola';
-});
-
-
-
-
-/*Route::group(['prefix'=>'mantenimiento'],function(){
-	Route::resource('rol','Ctrl_rol');
 });*/
+
+
+
+
+Route::group(['prefix'=>'mantenimiento'],function(){
+	Route::resource('calendario','Ctrl_calendario');
+});
 

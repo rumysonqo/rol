@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!--full calendar-->
 
-  <link rel="stylesheet" href="/adminlte/bower_components/fullcalendar/dist/fullcalendar.min.css">
+  <link href="{{ asset('/adminlte/bower_components/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
 
   <link rel="stylesheet" href="/adminlte/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">  
 
@@ -294,7 +294,7 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU PRINCIPAL</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="{{url('calendario')}}"><i class="fa fa-link"></i> <span>Rol de Turnos</span></a></li>
+        <li class="active"><a href="{{url('mantenimiento/calendario')}}"><i class="fa fa-link"></i> <span>Rol de Turnos</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Mantenimiento</span>
